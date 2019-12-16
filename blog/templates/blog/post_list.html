@@ -8,18 +8,12 @@
     <div>
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
-
+    {% for post in posts %}
     <div>
-        <p>published:14.12.19,09:25</p>
-        <h2><a href="">My first POst</a></h2>
-        <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+       <p>published:{{post.published_date}}</p>
+        <h2><a href="">{{post.title}}</a></h2>
+        <p>{{post.text|linebreaksbr}}</p>
     </div>
-
-    <div>
-        <p>published:14.12.19,09:28</p>
-        <h2><a href="">My second Post</a></h2>
-        <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-    </div>
-
+    {% endfor %}
 </body>
 </html>
